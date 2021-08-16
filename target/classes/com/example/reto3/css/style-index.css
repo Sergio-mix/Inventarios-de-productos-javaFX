@@ -1,0 +1,100 @@
+.color {
+    -fx-background-color: #EEEEEE;
+}
+
+.panel {
+    -fx-background-color: #FFFFFF;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
+
+.button-registrar {
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-background-color: #12e299;
+    -fx-text-alignment: center;
+}
+
+.button-Actualizar {
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-background-color: #458edb;
+    -fx-text-alignment: center;
+}
+
+.button-eliminar {
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-background-color: #de3b3b;
+    -fx-text-alignment: center;
+}
+
+.button-info {
+    -fx-background-color: transparent;
+}
+
+.panel-lateral {
+    -fx-background-color: #2083ea;
+}
+
+.button-panel-lateral {
+    -fx-background-color: transparent;
+    -fx-border-radius: 0 10 10 0;
+    -fx-background-radius: 0 10 10 0;
+}
+
+.button-panel-latera:hover {
+    -fx-background-color: #458edb;
+}
+
+.button-buscar{
+    -fx-background-color:#FFFFFF;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}
+
+.table-view{
+    -fx-base: #ffffff;
+    -fx-control-inner-background: #ffffff;
+    -fx-background-color: rgba(255, 255, 255, 0);
+    -fx-table-cell-border-color: rgba(255, 255, 255, 0);
+    -fx-padding: 1;
+    -fx-selection-bar-non-focused: #2083ea;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #ffffff;
+    -fx-border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgb(255, 255, 255) rgba(255, 255, 255, 0);
+    -fx-border-width: 1;
+    -fx-background-insets: 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 25;
+    -fx-border-width: 0 0 0 0;
+    -fx-text-fill: #000000;
+}
+.table-view .column-header .label {
+    -fx-font-size: 13px;
+    -fx-font-weight:bold;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #000000;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-cell {
+    -fx-font-size: 14px;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-text-fill: #000000;
+    -fx-alignment: center-left;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: #2083ea;
+}
+
+.table-row-cell{
+    -fx-table-cell-border-color: transparent;
+}

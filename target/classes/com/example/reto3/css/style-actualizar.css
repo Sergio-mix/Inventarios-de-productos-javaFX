@@ -1,0 +1,20 @@
+.body {
+    -fx-background-color: #FFFFFF;
+}
+
+.button-register {
+    -fx-background-color: #12e299;
+}
+
+.button-salir {
+    -fx-background-color: #ea395a;
+}
+
+.textFile {
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+.separador {
+    -fx-background-color: #717a7d;
+}
