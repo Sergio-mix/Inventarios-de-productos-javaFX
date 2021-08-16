@@ -1,7 +1,7 @@
 package com.example.reto3;
 
 import com.example.reto3.model.Producto;
-import com.example.reto3.model.dao.ProductoDao;
+import com.example.reto3.model.dto.ProductoDTO;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -65,7 +65,7 @@ public class ControllerUpdate implements Initializable {
                 //Nuevo Producto
                 Producto nuevo = new Producto(producto.getCodigo(), nombre, Float.parseFloat(precio), Integer.parseInt(inventario));
 
-                if (ProductoDao.actualizar(nuevo, producto)) {
+                if (ProductoDTO.actualizar(nuevo, producto)) {
                     salir();
                  controllerIndex.mensaje();
                 } else {

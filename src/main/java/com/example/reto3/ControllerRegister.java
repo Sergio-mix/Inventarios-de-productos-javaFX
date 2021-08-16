@@ -1,14 +1,12 @@
 package com.example.reto3;
 
 import com.example.reto3.model.Validaciones;
-import com.example.reto3.model.dao.ProductoDao;
+import com.example.reto3.model.dto.ProductoDTO;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -42,7 +40,7 @@ public class ControllerRegister implements Initializable {
     private void registrar(ActionEvent event) {
         ControllerIndex controllerIndex = new ControllerIndex();
         try {
-            int codigo = ProductoDao.getList().size() + 1;
+            int codigo = ProductoDTO.getList().size() + 1;
 
             while (Validaciones.validar(codigo)) {
                 codigo += 1;
@@ -56,7 +54,7 @@ public class ControllerRegister implements Initializable {
                     && !precio.equals("")
                     && !inventario.equals("")) {
 
-                if (ProductoDao.agregar(codigo,
+                if (ProductoDTO.agregar(codigo,
                         nombre, Float.parseFloat(precio),
                         Integer.parseInt(inventario))) {
                     controllerIndex.addRow();// agregar a la tabla

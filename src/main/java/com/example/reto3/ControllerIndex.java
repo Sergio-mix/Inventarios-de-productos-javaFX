@@ -2,12 +2,11 @@ package com.example.reto3;
 
 import com.example.reto3.model.Data;
 import com.example.reto3.model.Producto;
-import com.example.reto3.model.dao.ProductoDao;
+import com.example.reto3.model.dto.ProductoDTO;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,7 +14,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -25,7 +23,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.reto3.model.dao.ProductoDao.getList;
+import static com.example.reto3.model.dto.ProductoDTO.getList;
 
 
 public class ControllerIndex implements Initializable {
@@ -101,11 +99,11 @@ public class ControllerIndex implements Initializable {
     private void informe() {
         try {
             if (getList().size() != 0) {
-                label1.setText(ProductoDao.max());
-                label2.setText(ProductoDao.min());
-                label3.setText(String.valueOf(ProductoDao.promedioDePrecios()));
-                label4.setText(String.valueOf(ProductoDao.valorInventario()));
-                label5.setText(ProductoDao.precioDeLos3ProductosConLosPreciosMasAltos());
+                label1.setText(ProductoDTO.max());
+                label2.setText(ProductoDTO.min());
+                label3.setText(String.valueOf(ProductoDTO.promedioDePrecios()));
+                label4.setText(String.valueOf(ProductoDTO.valorInventario()));
+                label5.setText(ProductoDTO.precioDeLos3ProductosConLosPreciosMasAltos());
             } else {
                 label1.setText(null);
                 label2.setText(null);
@@ -200,7 +198,7 @@ public class ControllerIndex implements Initializable {
     public void eliminar() {
         Producto producto = table.getSelectionModel().getSelectedItem();
         if (producto != null) {
-            ProductoDao.eliminar(producto);//Método eliminar
+            ProductoDTO.eliminar(producto);//Método eliminar
             table.refresh();
             mostrarAlertInfo("El producto fue borrado exitosamente");
         } else {

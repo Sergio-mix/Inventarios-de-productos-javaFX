@@ -1,6 +1,5 @@
-package com.example.reto3.model.dao;
+package com.example.reto3.model.dto;
 
-import com.example.reto3.ControllerIndex;
 import com.example.reto3.model.Producto;
 import com.example.reto3.model.Validaciones;
 import javafx.collections.FXCollections;
@@ -13,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class ProductoDao {
+public class ProductoDTO {
 
     /**
      * Lista de productos
@@ -34,7 +33,7 @@ public class ProductoDao {
         Producto producto = new Producto(codigo, nombre, precio, inventario);
 
         if (!Validaciones.validar(nombre)) {
-            ProductoDao.getList().add(producto);
+            ProductoDTO.getList().add(producto);
             return true;
         }
         return false;
@@ -48,7 +47,7 @@ public class ProductoDao {
      */
     public static boolean eliminar(Producto producto) {
         if (getList().contains(producto)) {
-            ProductoDao.getList().remove(producto);
+            ProductoDTO.getList().remove(producto);
             return true;
         } else {
             return false;
@@ -80,15 +79,15 @@ public class ProductoDao {
     public static String max() {
         List<Float> listaDePrecios = new ArrayList<>();
 
-        for (Producto producto : ProductoDao.getList()) {
+        for (Producto producto : ProductoDTO.getList()) {
             listaDePrecios.add((float) producto.getPrecio());
         }
 
         float precioMayor = Collections.max(listaDePrecios);
 
         for (int i = 0; i < listaDePrecios.size(); i++) {
-            if (precioMayor == (float) ProductoDao.getList().get(i).getPrecio()) {
-                return String.valueOf(ProductoDao.getList().get(i).getNombre());
+            if (precioMayor == (float) ProductoDTO.getList().get(i).getPrecio()) {
+                return String.valueOf(ProductoDTO.getList().get(i).getNombre());
             }
         }
         return null;
@@ -102,15 +101,15 @@ public class ProductoDao {
     public static String min() {
         List<Float> listaDePrecios = new ArrayList<>();
 
-        for (Producto producto : ProductoDao.getList()) {
+        for (Producto producto : ProductoDTO.getList()) {
             listaDePrecios.add((float) producto.getPrecio());
         }
 
         float precioMenor = Collections.min(listaDePrecios);
 
         for (int i = 0; i < listaDePrecios.size(); i++) {
-            if (precioMenor == (float) ProductoDao.getList().get(i).getPrecio()) {
-                return String.valueOf(ProductoDao.getList().get(i).getNombre());
+            if (precioMenor == (float) ProductoDTO.getList().get(i).getPrecio()) {
+                return String.valueOf(ProductoDTO.getList().get(i).getNombre());
             }
         }
         return null;
@@ -124,11 +123,11 @@ public class ProductoDao {
     public static float promedioDePrecios() {
         float result = 0;
 
-        for (Producto producto : ProductoDao.getList()) {
+        for (Producto producto : ProductoDTO.getList()) {
             result += (float) producto.getPrecio();
         }
 
-        result = result / ProductoDao.getList().size();
+        result = result / ProductoDTO.getList().size();
         BigDecimal bd = new BigDecimal(result);
         bd = bd.setScale(1, RoundingMode.HALF_UP);
 
@@ -145,7 +144,7 @@ public class ProductoDao {
     public static float valorInventario() {
         float result = 0;
 
-        for (Producto producto : ProductoDao.getList()) {
+        for (Producto producto : ProductoDTO.getList()) {
             result += (float) producto.getPrecio() * (int) producto.getInventario();
         }
 
@@ -167,7 +166,7 @@ public class ProductoDao {
         List<String> result = new ArrayList<>();
         List<Float> listaDePrecios = new ArrayList<>();
 
-        for (Producto producto : ProductoDao.getList()) {
+        for (Producto producto : ProductoDTO.getList()) {
             listaDePrecios.add((float) producto.getPrecio());
         }
 
@@ -184,8 +183,8 @@ public class ProductoDao {
             float precioMayor = Collections.max(listaDePrecios);
 
             for (int i = 0; i < listaDePrecios.size(); i++) {
-                if (precioMayor == ProductoDao.getList().get(i).getPrecio()) {
-                    result.add(ProductoDao.getList().get(i).getNombre());
+                if (precioMayor == ProductoDTO.getList().get(i).getPrecio()) {
+                    result.add(ProductoDTO.getList().get(i).getNombre());
                     listaDePrecios.remove(i);
                 }
             }
@@ -218,6 +217,6 @@ public class ProductoDao {
      * @param list
      */
     public static void setList(ObservableList<Producto> list) {
-        ProductoDao.list = list;
+        ProductoDTO.list = list;
     }
 }
