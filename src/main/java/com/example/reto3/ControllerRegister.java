@@ -40,7 +40,7 @@ public class ControllerRegister implements Initializable {
     private void registrar(ActionEvent event) {
         ControllerIndex controllerIndex = new ControllerIndex();
         try {
-            int codigo = ProductoDTO.getList().size() + 1;
+            int codigo = ProductoDTO.getProductos().size() + 1;
 
             while (Validaciones.validar(codigo)) {
                 codigo += 1;
@@ -67,8 +67,8 @@ public class ControllerRegister implements Initializable {
             } else {
                 controllerIndex.mostrarAlertWarning("Todos los campos son obligatorios");
             }
-        } catch (Exception ignored) {
-
+        } catch (NumberFormatException ignored) {
+            controllerIndex.mostrarAlertWarning("El valor del precio y el inventario tienen que ser de tipo numérico");
         }
     }
 

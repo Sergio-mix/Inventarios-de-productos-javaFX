@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.example.reto3.model.dto.ProductoDTO.getList;
+import static com.example.reto3.model.dto.ProductoDTO.getProductos;
 
 
 public class ControllerIndex implements Initializable {
@@ -89,7 +89,7 @@ public class ControllerIndex implements Initializable {
                         "-fx-text-fill: #000000;"
         );
 
-        table.setItems(getList());//agregar data a la tabla
+        table.setItems(getProductos());//agregar data a la tabla
     }
 
     /**
@@ -98,7 +98,7 @@ public class ControllerIndex implements Initializable {
     @FXML
     private void informe() {
         try {
-            if (getList().size() != 0) {
+            if (getProductos().size() != 0) {
                 label1.setText(ProductoDTO.max());
                 label2.setText(ProductoDTO.min());
                 label3.setText(String.valueOf(ProductoDTO.promedioDePrecios()));
@@ -185,7 +185,7 @@ public class ControllerIndex implements Initializable {
     @FXML
     public void addRow() {
         try {
-            this.table.setItems(getList());
+            this.table.setItems(getProductos());
         } catch (Exception ignored) {
 
         }
@@ -252,11 +252,11 @@ public class ControllerIndex implements Initializable {
         String filtro = this.textBuscar.getText().toLowerCase();
 
         if (filtro.isEmpty()) {
-            this.table.setItems(getList());
+            this.table.setItems(getProductos());
         } else {
             this.filtrarProductos.clear();
 
-            for (Producto producto : getList()) {
+            for (Producto producto : getProductos()) {
                 String nombre = producto.getNombre().toLowerCase();
                 String precio = String.valueOf(producto.getPrecio());
                 String inventario = String.valueOf(producto.getInventario());

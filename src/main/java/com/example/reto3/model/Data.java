@@ -8,33 +8,33 @@ public class Data {
      */
     public static void data() {
         Producto producto1 = new Producto(1, "Manzanas", 6000.0f, 25);
-        ProductoDTO.getList().add(producto1);
+        ProductoDTO.getProductos().add(producto1);
 
         Producto producto2 = new Producto(2, "Limones", 2500.0f, 15);
-        ProductoDTO.getList().add(producto2);
+        ProductoDTO.getProductos().add(producto2);
 
         Producto producto3 = new Producto(3, "Peras", 2700.0f, 33);
-        ProductoDTO.getList().add(producto3);
+        ProductoDTO.getProductos().add(producto3);
 
         Producto producto4 = new Producto(4, "Arandanos", 9300.0f, 34);
-        ProductoDTO.getList().add(producto4);
+        ProductoDTO.getProductos().add(producto4);
 
         Producto producto5 = new Producto(5, "Tomates", 2100.0f, 42);
-        ProductoDTO.getList().add(producto5);
+        ProductoDTO.getProductos().add(producto5);
 
         Producto producto6 = new Producto(6, "Fresas", 4100.0f, 10);
-        ProductoDTO.getList().add(producto6);
+        ProductoDTO.getProductos().add(producto6);
 
         Producto producto7 = new Producto(7, "Helado", 4500.0f, 41);
-        ProductoDTO.getList().add(producto7);
+        ProductoDTO.getProductos().add(producto7);
 
         Producto producto8 = new Producto(8, "Galletas", 500.0f, 8);
-        ProductoDTO.getList().add(producto8);
+        ProductoDTO.getProductos().add(producto8);
 
         Producto producto9 = new Producto(9, "Chocolates", 4500.0f, 80);
-        ProductoDTO.getList().add(producto9);
+        ProductoDTO.getProductos().add(producto9);
 
         Producto producto10 = new Producto(10, "Jamon", 15000.0f, 10);
-        ProductoDTO.getList().add(producto10);
+        ProductoDTO.getProductos().add(producto10);
     }
 }

@@ -11,7 +11,7 @@ public class Validaciones {
      * @return true si el codigo ya existe || false si no existe
      */
     public static boolean validar(int codigo) {
-        for (Producto producto : ProductoDTO.getList()) {
+        for (Producto producto : ProductoDTO.getProductos()) {
             if (codigo == (int) producto.getCodigo()) {
                 return true;
             }
@@ -27,7 +27,7 @@ public class Validaciones {
      * @return false si el nombre sel producta ya se encuntra en uso || true si no esta en uso
      */
     public static boolean validar(String nombre, int codigo) {
-        for (Producto producto : ProductoDTO.getList()) {
+        for (Producto producto : ProductoDTO.getProductos()) {
             if ((int) producto.getCodigo() != codigo)
                 if (nombre.toLowerCase().equals(producto.getNombre().toLowerCase())) {
                     return false;
@@ -43,7 +43,7 @@ public class Validaciones {
      * @return true si el nombre ya se encuentra registrado || false si no esta
      */
     public static boolean validar(String nombre) {
-        for (Producto producto : ProductoDTO.getList()) {
+        for (Producto producto : ProductoDTO.getProductos()) {
             if (producto.getNombre().toLowerCase().equals(nombre.toLowerCase())) {
                 return true;
             }
